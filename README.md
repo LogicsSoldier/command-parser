@@ -5,7 +5,7 @@ Parse command line arguments for virtually anything in a lightweight extensible 
 ![image](https://github.com/LogicsSoldier/command-parser/assets/4423284/97bed225-09ec-4843-82ee-ede989511829)
 <details>
 
-<summary>... more</summary>
+<summary>examples</summary>
 
 <br/>
 
@@ -14,7 +14,7 @@ super flexible and lightweight, can do a lot more to natively process custom typ
 ### using aliases
 
 ```js
-const parsed = CommandParser.Parse(raw, {
+const parsed = CommandParser.Parse("Category: People --list=James+John+Luke+Harry -k=2", {
       list: [String],
       keep: Number,
 
@@ -29,10 +29,10 @@ const parsed = CommandParser.Parse(raw, {
 ### using custom types
 
 ```js
-const customDate = (val, tagName) => val.split("/");
+const customDate = (valueRecieved, tagName) => valueRecieved.split("/");
 const parsed = CommandParser.Parse("jeffery --birthday=08/03/1973", {birthday: customDate});
 
-const {beginning, ags} = parsed;
+const {beginning, args} = parsed;
 console.log(beginning, args.birthday); // OUTPUT: jeffery [08, 03, 1973]
 ```
 
