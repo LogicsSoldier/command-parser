@@ -2,20 +2,40 @@
 Parse command line arguments for virtually anything in a lightweight extensible way 
 
 
+![image](https://github.com/LogicsSoldier/command-parser/assets/4423284/97bed225-09ec-4843-82ee-ede989511829)
+<details>
+
+<summary>Tips for collapsed sections</summary>
+
+<br/>
+
+super flexible and lightweight, can do a lot more to natively process custom types :D .. Booleans and Arrays have magic sorting properties but easily overrided with a custom type.
+
+### using aliases
+
 ```js
 const parsed = CommandParser.Parse(raw, {
       list: [String],
       keep: Number,
 
       "k": "keep" //shorthands/aliases
-    }, true) //strict mode
+    }, true) //strict mode is true by default
 
 
     let { list, keep } = parsed.args;
     console.log(parsed);
 ```
 
-can do a lot more to natively process custom types :D super flexible.. Booleans and Arrays have magic sorting properties but easily overrided with a custom type.
-![image](https://github.com/LogicsSoldier/command-parser/assets/4423284/97bed225-09ec-4843-82ee-ede989511829)
+### using custom types
+
+```js
+const customDate = (val, tagName) => val.split("/");
+const parsed = CommandParser.Parse("jeffery --birthday=08/03/1973", {birthday: customDate});
+
+const {beginning, ags} = parsed;
+console.log(beginning, args.birthday); // OUTPUT: jeffery [08, 03, 1973]
+```
+
+<details>
 
 ###### email at logicssoldier@gmail.com for inquieries
