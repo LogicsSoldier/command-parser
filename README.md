@@ -5,7 +5,7 @@ Parse command line arguments for virtually anything in a lightweight extensible 
 ![image](https://github.com/LogicsSoldier/command-parser/assets/4423284/97bed225-09ec-4843-82ee-ede989511829)
 <details>
 
-<summary>Tips for collapsed sections</summary>
+<summary>... more</summary>
 
 <br/>
 
@@ -36,6 +36,7 @@ const {beginning, ags} = parsed;
 console.log(beginning, args.birthday); // OUTPUT: jeffery [08, 03, 1973]
 ```
 
-<details>
+</details>
+
 
 ###### email at logicssoldier@gmail.com for inquieries
