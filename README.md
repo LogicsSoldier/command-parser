@@ -23,7 +23,7 @@ const parsed = CommandParser.Parse("Category: People --list=James+John+Luke+Harr
 
 
     let { list, keep } = parsed.args;
-    console.log(parsed);
+    console.log(parsed); // same output as in image above w/ args.keep = 2
 ```
 
 ### using custom types
